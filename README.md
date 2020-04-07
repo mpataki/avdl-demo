@@ -1,6 +1,6 @@
 # avdl-demo
 
-This repo is intended to demonstrate an issue with the [maven-avro-schema-plugin](https://github.com/zolyfarkas/spf4j/tree/master/spf4j-avro-components/maven-avro-schema-plugin)
+This repo is intended to demonstrate an issue with the [maven-avro-schema-plugin](https://github.com/zolyfarkas/spf4j/tree/master/spf4j-avro-components/maven-avro-schema-plugin), pertaining to https://github.com/zolyfarkas/spf4j/issues/43.
 
 Running `mvn clean compile` as is will genarate the following error:
 
