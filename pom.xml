@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>avdl-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <schema-registry-url>http://localhost:8081</schema-registry-url>
+        <avro-version>1.9.2</avro-version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>${avro-version}</version>
+        </dependency>
+
+        <dependency> <!-- zolyfarkas/avro fork generated classes use @Nullable/@Nonnull -->
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>idl-protocol</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+<!--            <plugin>-->
+<!--                <groupId>org.spf4j</groupId>-->
+<!--                <artifactId>maven-avro-schema-plugin</artifactId>-->
+<!--                <extensions>true</extensions>-->
+
+<!--                <configuration>-->
+<!--                    <fieldVisibility>PRIVATE</fieldVisibility>-->
+<!--                    <stringType>String</stringType>-->
+<!--                    <createSetters>false</createSetters>-->
+<!--                    <excludeValidators>-->
+<!--                        <validator>namesValidator</validator>-->
+<!--                        <validator>docValidator</validator>-->
+<!--                    </excludeValidators>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+        </plugins>
+    </build>
+</project>

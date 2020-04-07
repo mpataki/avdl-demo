@@ -1,0 +1,10 @@
+
+
+protocol B {
+
+  @namespace("com.example.avro")
+  record B {
+    string id;
+    timestamp_ms timestamp;
+  }
+}

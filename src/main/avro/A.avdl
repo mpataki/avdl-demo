@@ -1,0 +1,11 @@
+
+protocol A {
+
+  import idl "B.avdl";
+
+  @namespace("com.example.avro")
+  record A {
+    B b;
+    string someField;
+  }
+}
